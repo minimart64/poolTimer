@@ -1,7 +1,19 @@
-#! /etc/lib python
+#!/usr/bin/env python3
 
+import sys, logging, logging.handlers, smtplib, configparser
 import RPi.GPIO as GPIO
 from time import sleep
+
+# set up the logger
+log = logging.getLogger('poolTimer')
+hdlr = logging.handlers.RotatingFileHandler('/home/pi/Documents/logs/poolTimer.log',\
+                                            'a',500000,7)
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+log.addHandler(hdlr)
+log.setLevel(logging.INFO)
+log.info("__________Blank Space_________")
+log.info("##### Starting poolTimer #####")
 
 # global variables
 pumpPin = 4
