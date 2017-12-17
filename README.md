@@ -1,2 +1,2 @@
 # poolTimer
-Raspberry pi controlled pool time
+Raspberry pi controlled pool timer
